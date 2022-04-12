@@ -1,0 +1,43 @@
+<h2>Reflect the loan repayment</h2>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Choose the recipient:</mat-label>
+    <select matNativeControl #creditor>
+        <option>Me</option>
+        <option *ngFor="let contact of contacts">{{contact.name}} {{contact.secondName}} {{contact.telNum}}</option>
+    </select>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Choose the payer:</mat-label>
+    <select matNativeControl #debtor>
+        <option>Me</option>
+        <option *ngFor="let contact of contacts">{{contact.name}} {{contact.secondName}} {{contact.telNum}}</option>
+    </select>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Amount of payment:</mat-label>
+    <input
+        matInput
+        placeholder="0"
+        type="number"
+        #amount>
+        <span matPrefix>BYN&nbsp;</span>
+    <span matSuffix>.00</span>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Date of payment:</mat-label>
+    <input
+        matInput
+        type="date"
+        #date>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Enter details</mat-label>
+    <textarea matInput class='addInf'></textarea>
+</mat-form-field>
+
+<button mat-raised-button (click)="createPayment(creditor.value, debtor.value, amount.value, date.value)">Create</button>

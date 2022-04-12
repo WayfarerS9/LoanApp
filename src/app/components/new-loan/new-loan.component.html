@@ -1,0 +1,55 @@
+<h2>Create a new loan</h2>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Choose the creditor:</mat-label>
+    <select matNativeControl #creditor>
+        <option>Me</option>
+        <option *ngFor="let contact of contacts">{{contact.name}} {{contact.secondName}} {{contact.telNum}}</option>
+    </select>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Choose the debtor:</mat-label>
+    <select matNativeControl #debtor>
+        <option>Me</option>
+        <option *ngFor="let contact of contacts">{{contact.name}} {{contact.secondName}} {{contact.telNum}}</option>
+    </select>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Amount of loan:</mat-label>
+    <input
+        matInput
+        placeholder="0"
+        type="number"
+        #amount>
+        <span matPrefix>BYN&nbsp;</span>
+    <span matSuffix>.00</span>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Date of loan:</mat-label>
+    <input
+        matInput
+        type="date"
+        #date>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Reason of the loan</mat-label>
+    <input matInput #reason>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Enter details of event (details of costs)</mat-label>
+    <textarea matInput class='addInf'></textarea>
+</mat-form-field>
+
+
+<button mat-raised-button (click)="createLoan(creditor.value, debtor.value, amount.value, date.value, reason.value)">Create</button>
+
+<p>
+    If the counterparty is absent among the users, register his ghost profile
+    by clicking on the button below:
+</p>
+<button mat-raised-button color="primary" routerLink="/regGhost">Register a new user</button>

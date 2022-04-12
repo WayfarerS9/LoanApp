@@ -1,0 +1,28 @@
+<h2>Authentication page</h2>
+<p>Please enter your details:</p>
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Name</mat-label>
+    <input matInput #name>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Second name</mat-label>
+    <input matInput #secondName>
+</mat-form-field>
+
+<mat-form-field class="example-full-width" appearance="fill" class="form">
+    <mat-label>Telephone</mat-label>
+    <input type="tel"
+        matInput
+        placeholder="+375291112233"
+        #telNum>
+    <mat-icon matSuffix>mode_edit</mat-icon>
+</mat-form-field>
+
+<button mat-raised-button (click)="authUser(name.value, secondName.value, telNum.value)">
+    Send
+</button>
+<p>
+    If you are not registered, follow the link to register:
+</p>
+<button mat-raised-button color="primary" routerLink="/reg">Go to register</button>

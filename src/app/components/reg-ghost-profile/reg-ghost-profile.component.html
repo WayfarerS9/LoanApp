@@ -1,0 +1,22 @@
+<h2>Registration of ghost profile page</h2>
+<p>By this action you will register a ghost profile. The created profile will be automatically added to your contacts list. Enter the registration details:</p>
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Name</mat-label>
+    <input matInput #name>
+</mat-form-field>
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Second name</mat-label>
+    <input matInput #secondName>
+</mat-form-field>
+<mat-form-field class="example-full-width" appearance="fill" class="form">
+    <mat-label>Telephone</mat-label>
+    <input type="tel"
+        matInput
+        placeholder="+375291112233"
+        #telNum>
+        
+    <mat-icon matSuffix>mode_edit</mat-icon>
+</mat-form-field>
+<button mat-raised-button (click)="regUserGhost(name.value, secondName.value, telNum.value)">
+    Send
+</button>

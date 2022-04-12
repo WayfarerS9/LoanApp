@@ -1,0 +1,52 @@
+<h2>Searching for contacts</h2>
+<p class="form">
+    <mat-form-field appearance="fill" class="searchText">
+        <mat-label>Enter searching name</mat-label>
+        <input matInput
+            type="text"
+            [(ngModel)]="nameValue"
+            #nameSearch
+            (input)="processingPassValue(nameSearch.value, secondNameSearch.value, telNum.value)">
+        <button *ngIf="nameValue"
+            matSuffix mat-icon-button aria-label="Clear"
+            (click)="nameValue=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</p>
+<p class="form">
+    <mat-form-field appearance="fill" class="searchText">
+        <mat-label>Enter searching second name</mat-label>
+        <input matInput
+            type="text"
+            [(ngModel)]="secondNameValue"
+            #secondNameSearch
+            (input)="processingPassValue(nameSearch.value, secondNameSearch.value, telNum.value)">
+        <button *ngIf="secondNameValue"
+            matSuffix mat-icon-button aria-label="Clear"
+            (click)="secondNameValue=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</p>
+<form class="form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Telephone</mat-label>
+        <span matPrefix>+375 &nbsp;</span>
+        <input type="tel"
+            matInput
+            placeholder="291112233"
+            #telNum
+            (input)="processingPassValue(nameSearch.value, secondNameSearch.value, telNum.value)">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+</form>
+
+<mat-list role="list" *ngFor="let user of users$ | async">
+    <mat-list-item role="listitem">
+        <a routerLink="/profile/{{user.id}}">
+            {{user.name}} {{user.secondName}} {{user.telNum}}
+        </a>
+        <button mat-raised-button (click)="addToContacts(user)">Add to contacts</button>
+    </mat-list-item>
+</mat-list>

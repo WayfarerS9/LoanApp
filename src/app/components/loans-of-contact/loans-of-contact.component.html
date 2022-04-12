@@ -1,0 +1,62 @@
+<h2>Settlements with person</h2>
+
+<h3>My debts</h3>
+
+<table mat-table [dataSource]="creditLoans" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Information about contact</th>
+        <td mat-cell *matCellDef="let operation"> <a routerLink="/loan/{{operation.loanID}}">{{operation.creditorData}}</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let operation"> <a routerLink="/loan/{{operation.loanID}}">{{operation.amount}}</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let operation"> <a routerLink="/loan/{{operation.loanID}}">{{operation.date}}</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="foot">
+        <th mat-header-cell *matHeaderCellDef> Foot </th>
+        <td mat-cell *matCellDef="let operation"><a routerLink="/loan/{{operation.loanID}}">{{operation.foot}}</a></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<p>Total amount = {{debitSumm}}</p>
+
+
+<h3>My loans</h3>
+
+<table mat-table [dataSource]="debtLoans" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Information about contact </th>
+        <td mat-cell *matCellDef="let contact"><a routerLink="/loan/{{contact.loanID}}">{{contact.debtorData}}</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let contact"><a routerLink="/loan/{{contact.loanID}}">{{contact.amount}}</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let contact"><a routerLink="/loan/{{contact.loanID}}">{{contact.date}}</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="foot">
+        <th mat-header-cell *matHeaderCellDef> Foot </th>
+        <td mat-cell *matCellDef="let contact"><a routerLink="/loan/{{contact.loanID}}">{{contact.foot}}</a></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<p>Total amount = {{creditSumm}}</p>
+
+<p class="balance">Balance = {{balanceSumm}}</p>
+
+<button mat-raised-button (click)="goBack()">Go back</button>

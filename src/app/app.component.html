@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+<app-logged-status-display></app-logged-status-display>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <button routerLink="/contacts" mat-raised-button color="primary">My contacts</button>
+        <button routerLink="/searching" mat-raised-button color="primary">Search for friends</button>
+        <button routerLink="/newLoan" mat-raised-button color="primary">New loan</button>
+        <button routerLink="/loanList" mat-raised-button color="primary">List of loans</button>
+        <button routerLink="/repayment" mat-raised-button color="primary">Debt repayment</button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

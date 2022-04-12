@@ -1,0 +1,21 @@
+h2 {
+    padding-top: 0.2em;
+    margin-left: 1em;
+}
+
+.form {
+    margin-left: 1em;
+    display: block;
+    width: 21em;
+}
+
+button {
+    margin-left: 1em;
+}
+
+p {
+    margin-left: 1em;
+    font-size: 1.5em;
+    color: indigo;
+    margin-top: 2em;
+}

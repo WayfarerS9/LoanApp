@@ -1,0 +1,15 @@
+button, h2, p {
+    margin-left: 1em;
+}
+
+h3, p {
+    display: inline-block;
+}
+
+div {
+    margin-left: 1em;
+}
+
+p {
+    color: red
+}

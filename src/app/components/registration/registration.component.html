@@ -1,0 +1,27 @@
+<h2>Registration page</h2>
+<p>If you don't have a profile, enter the registration details:</p>
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Name</mat-label>
+    <input matInput #name>
+</mat-form-field>
+<mat-form-field appearance="fill" class="form">
+    <mat-label>Second name</mat-label>
+    <input matInput #secondName>
+</mat-form-field>
+<mat-form-field class="example-full-width" appearance="fill" class="form">
+    <mat-label>Telephone</mat-label>
+    <input type="tel"
+        matInput
+        placeholder="291112233"
+        #telNum>
+    <span matPrefix>+375 &nbsp;</span>
+    <mat-icon matSuffix>mode_edit</mat-icon>
+</mat-form-field>
+
+<button mat-raised-button (click)="regUser(name.value, secondName.value, telNum.value)">
+    Send
+</button>
+<p>
+    If you are registered, follow the link for authorization:
+</p>
+<button mat-raised-button color="primary" routerLink="/auth">Go to authorization</button>

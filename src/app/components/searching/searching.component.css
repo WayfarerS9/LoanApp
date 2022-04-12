@@ -1,0 +1,23 @@
+h2 {
+    padding-top: 0.2em;
+    margin-left: 1em;
+}
+
+a {
+    padding: .5em;
+    text-decoration: none;
+    width: 15em;
+    color: #3f51b5;
+}
+
+a:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+.form {
+    margin-left: 1em;
+}
+
+.searchText {
+    width: 15em;
+}
